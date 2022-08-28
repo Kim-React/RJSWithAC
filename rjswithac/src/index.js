@@ -15,9 +15,16 @@ const client = new ApolloClient({
 });
 
 
+const aspclient = new ApolloClient({
+  uri: 'https://localhost:5001/graphql',
+  cache: new InMemoryCache(),
+});
+
+
+
 root.render(
   <React.StrictMode >
-    <ApolloProvider client={client}> 
+    <ApolloProvider client={aspclient}> 
     <App />
     </ApolloProvider>
     
