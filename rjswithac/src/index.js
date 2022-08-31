@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ApolloClient,
@@ -6,6 +7,8 @@ import { ApolloClient,
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -24,9 +27,12 @@ const aspclient = new ApolloClient({
 
 root.render(
   <React.StrictMode >
-    <ApolloProvider client={aspclient}> 
+    <BrowserRouter>
+        <ApolloProvider client={aspclient}> 
     <App />
+
     </ApolloProvider>
+    </BrowserRouter>
     
   </React.StrictMode>
 );

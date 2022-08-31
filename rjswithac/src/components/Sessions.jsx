@@ -1,5 +1,5 @@
-import React from 'react'
-import {gql,useQuery} from '@apollo/client'
+import React from 'react';
+import {gql,useQuery} from '@apollo/client';
 
 const GET_SESSIONS = gql`
 query GetSessions{
@@ -19,15 +19,13 @@ export default function Sessions() {
 
      
   return data.sessions.map(({id,title,description,day})=>(
-    <div key={id}>
-      <h3>{id}</h3>
-    <h3>{title}</h3>
-    <br />
-    <b>About this session:</b>
-    <p>{description}</p>
-    <b>day:</b>
-    <p>{day}</p>
-    <br />
+  <div className="card" style={{width:"400px",marginBottom:"1em"}}  key={id}>
+    {/* <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%" /> */}
+    <div className="card-body">
+      <h4 className="card-title">{title}</h4>
+      <p className="card-text">{description}</p>
+      <p className="card-text">{day}</p>
+    </div>
   </div>
-  ))
+   ))
 }
