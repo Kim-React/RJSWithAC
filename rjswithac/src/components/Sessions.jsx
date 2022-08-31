@@ -7,6 +7,7 @@ query GetSessions{
 		id
     title
     description
+    day
   }
 }
 `
@@ -15,13 +16,17 @@ export default function Sessions() {
     <div>welcome to appollo</div>
     if(loading) return <p>loading...</p>
      if(error) return <p>error</p>
-  return data.sessions.map(({id,title,description})=>(
+
+     
+  return data.sessions.map(({id,title,description,day})=>(
     <div key={id}>
       <h3>{id}</h3>
     <h3>{title}</h3>
     <br />
     <b>About this session:</b>
     <p>{description}</p>
+    <b>day:</b>
+    <p>{day}</p>
     <br />
   </div>
   ))
